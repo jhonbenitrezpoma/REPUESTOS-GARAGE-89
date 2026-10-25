@@ -1,0 +1,223 @@
+/* =====================================================================
+   MOTO REPUESTOS · Tema motero "Asfalto & Racing"
+   Sin frameworks. Variables en :root para cambiar colores fácil.
+   ===================================================================== */
+:root{
+  --asfalto:#0d0e10; --carbon:#15171a; --panel:#1c1f23; --panel-2:#252a30; --linea:#2f353c;
+  --texto:#eceff2; --suave:#9aa3ad; --tenue:#667078;
+  --naranja:#ff5a1f; --naranja-2:#ff7a45; --amarillo:#ffc400;
+  --ok:#2ecc71; --alerta:#ffb020; --peligro:#ff4d4f;
+  --r:12px; --sombra:0 8px 24px rgba(0,0,0,.45);
+  --f-titulo:'Bebas Neue','Oswald','Impact',sans-serif;
+  --f-cuerpo:'Barlow','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--f-cuerpo);color:var(--texto);min-height:100vh;display:flex;flex-direction:column;line-height:1.45;
+  background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.015) 0 2px,transparent 2px 6px),
+    radial-gradient(1200px 500px at 80% -10%,rgba(255,90,31,.10),transparent 60%),
+    var(--asfalto);
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.ico{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.15em;flex:none}
+.hidden{display:none!important}
+.container{width:100%;max-width:1240px;margin:0 auto;padding:0 18px}
+main.container{flex:1;padding-top:26px;padding-bottom:40px}
+
+/* ---------- Cinta bandera a cuadros ---------- */
+.checker{height:10px;background:
+  conic-gradient(#fff 25%,#111 0 50%,#fff 0 75%,#111 0) 0 0/20px 20px;opacity:.9}
+
+/* ---------- Banner demo ---------- */
+.demo-banner{background:var(--amarillo);color:#1a1300;font-size:.8rem;text-align:center;padding:7px 14px;font-weight:600}
+.demo-banner button{text-decoration:underline;font-weight:700;margin-left:6px}
+
+/* ---------- Barra superior ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:rgba(13,14,16,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--naranja)}
+.topbar__row{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:12px 18px;max-width:1240px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-titulo);font-size:2rem;letter-spacing:.06em;line-height:1;text-transform:uppercase}
+.brand .ico{font-size:2.1rem;color:var(--naranja)}
+.brand em{font-style:normal;color:var(--naranja)}
+.search{flex:1 1 340px;min-width:min(340px,100%);max-width:640px;display:flex;border-radius:10px;overflow:hidden;border:1px solid var(--linea);background:var(--carbon)}
+.search:focus-within{border-color:var(--naranja);box-shadow:0 0 0 3px rgba(255,90,31,.2)}
+.search label{display:flex;align-items:center;flex:1;gap:8px;padding:0 12px;color:var(--suave)}
+.search input{flex:1;background:none;border:0;outline:0;padding:10px 0;font-size:.95rem;color:var(--texto);min-width:0}
+.search select{flex:none;max-width:150px;background:var(--panel-2);border:0;border-left:1px solid var(--linea);padding:0 10px;font-size:.8rem;color:var(--texto);outline:0}
+.account{display:flex;align-items:center;gap:14px;font-size:.85rem;margin-left:auto}
+.account a.link{color:var(--amarillo);font-weight:600;display:flex;align-items:center;gap:6px}
+.account a.link:hover{color:var(--naranja-2)}
+.account .who{color:var(--suave);display:flex;align-items:center;gap:6px}
+.tabs{background:var(--carbon);border-top:1px solid var(--linea)}
+.tabs__row{display:flex;gap:6px;overflow-x:auto;padding:0 18px;max-width:1240px;margin:0 auto;scrollbar-width:none}
+.tabs__row::-webkit-scrollbar{display:none}
+.tab{white-space:nowrap;padding:11px 14px;font-family:var(--f-titulo);font-size:1.1rem;letter-spacing:.08em;color:var(--suave);border-bottom:3px solid transparent;transition:.15s}
+.tab:hover{color:var(--texto)}
+.tab.active{color:var(--texto);border-bottom-color:var(--naranja)}
+.tab small{font-family:var(--f-cuerpo);font-size:.7rem;color:var(--tenue);margin-left:4px;letter-spacing:0}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 18px;border-radius:10px;font-weight:700;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;transition:.15s;border:1px solid transparent}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-primary{background:linear-gradient(180deg,var(--naranja-2),var(--naranja));color:#fff;box-shadow:0 4px 14px rgba(255,90,31,.35)}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--linea);color:var(--texto);background:var(--panel)}
+.btn-ghost:hover{border-color:var(--naranja);color:var(--naranja-2)}
+.btn-ok{background:var(--ok);color:#052e16}
+.btn-danger{background:var(--peligro);color:#fff}
+.btn-block{width:100%}
+.btn-sm{padding:6px 12px;font-size:.75rem}
+.iconbtn{width:34px;height:34px;border-radius:8px;display:inline-grid;place-items:center;color:var(--suave);transition:.15s;font-size:1.05rem}
+.iconbtn:hover{background:var(--panel-2);color:var(--texto)}
+.iconbtn.ok:hover{color:var(--ok)} .iconbtn.edit:hover{color:var(--amarillo)} .iconbtn.del:hover{color:var(--peligro)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;border-radius:16px;padding:34px 30px;margin-bottom:22px;border:1px solid var(--linea);
+  background:
+    linear-gradient(110deg,rgba(13,14,16,.96) 35%,rgba(13,14,16,.55)),
+    repeating-linear-gradient(-60deg,#1d2024 0 14px,#17191c 14px 28px);}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:300px;height:300px;border-radius:50%;
+  border:34px solid rgba(255,90,31,.12);box-shadow:0 0 0 22px rgba(255,90,31,.05) inset}
+.hero h1{font-family:var(--f-titulo);font-size:clamp(2.4rem,6vw,4.2rem);line-height:.95;letter-spacing:.04em;text-transform:uppercase}
+.hero h1 span{color:var(--naranja)}
+.hero p{color:var(--suave);max-width:560px;margin-top:10px}
+.hero .checker{position:absolute;left:0;right:0;bottom:0;height:8px}
+
+/* ---------- Filtros ---------- */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:20px;font-size:.8rem}
+.filters .lbl{color:var(--tenue);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.chip{padding:6px 14px;border-radius:999px;border:1px solid var(--linea);background:var(--panel);color:var(--suave);font-weight:600;transition:.15s}
+.chip:hover{border-color:var(--naranja);color:var(--texto)}
+.chip.active{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.check{display:flex;align-items:center;gap:6px;color:var(--suave);cursor:pointer;font-weight:600}
+.check input{accent-color:var(--naranja);width:16px;height:16px}
+
+/* ---------- Marcas (color por marca) ---------- */
+:root{--mc:#7a8590}
+.m-cf-moto{--mc:#ff7a1a} .m-suzuki{--mc:#2f8cff} .m-bajaj{--mc:#e63946} .m-alternos{--mc:#2ecc71}
+.m-honda{--mc:#ff3b30} .m-yamaha{--mc:#3b5bff} .m-akt{--mc:#ffd60a} .m-kawasaki{--mc:#7ddc1f}
+.tagm{display:inline-block;padding:2px 9px;border-radius:5px;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--mc)}
+
+/* ---------- Tarjetas catálogo ---------- */
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;
+  transition:.2s;border-top:3px solid var(--mc)}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra);border-color:var(--mc)}
+.card__media{position:relative;height:150px;display:grid;place-items:center;
+  background:repeating-linear-gradient(135deg,#22262b 0 10px,#1e2227 10px 20px)}
+.card__media .ico{font-size:4.4rem;color:#3a424a;stroke-width:1.3}
+.card__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:10px;background:#22262b}
+.card__tags{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;z-index:2}
+.tagt{padding:2px 9px;border-radius:5px;font-size:.66rem;font-weight:800;letter-spacing:.08em;background:rgba(0,0,0,.65);color:var(--texto)}
+.tagt.alt{background:var(--amarillo);color:#1a1300}
+.card__body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;gap:8px}
+.card__code{font-size:.72rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.card__title{font-size:1.02rem;font-weight:700;line-height:1.25;min-height:2.5em}
+.card__fit{font-size:.78rem;color:var(--suave);display:flex;gap:6px;align-items:flex-start}
+.card__foot{margin-top:auto;padding-top:12px;border-top:1px dashed var(--linea);display:flex;flex-direction:column;gap:10px}
+.price{font-family:var(--f-titulo);font-size:1.9rem;letter-spacing:.03em;color:var(--amarillo);line-height:1}
+.price small{display:block;font-family:var(--f-cuerpo);font-size:.65rem;color:var(--tenue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.row-between{display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+
+/* ---------- Medidor de combustible (stock) ---------- */
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:6px;font-size:.72rem;font-weight:800;white-space:nowrap}
+.badge.ok{background:rgba(46,204,113,.15);color:var(--ok)}
+.badge.low{background:rgba(255,176,32,.15);color:var(--alerta)}
+.badge.out{background:rgba(255,77,79,.15);color:var(--peligro)}
+.gauge{height:6px;border-radius:99px;background:#101214;overflow:hidden;border:1px solid var(--linea);min-width:60px}
+.gauge i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--peligro),var(--alerta) 35%,var(--ok))}
+.gauge.low i{background:var(--alerta)} .gauge.out i{background:var(--peligro)} .gauge.ok i{background:var(--ok)}
+
+/* ---------- KPIs ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-bottom:26px}
+.kpi{position:relative;background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);padding:16px 18px;display:flex;gap:14px;align-items:center;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--k,var(--naranja))}
+.kpi__ico{width:46px;height:46px;border-radius:10px;display:grid;place-items:center;font-size:1.4rem;color:var(--k,var(--naranja));background:rgba(255,255,255,.04)}
+.kpi span{font-size:.7rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.kpi h3{font-family:var(--f-titulo);font-size:1.9rem;letter-spacing:.03em;line-height:1.1}
+
+/* ---------- Encabezados de sección ---------- */
+.section-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}
+.section-head h2{font-family:var(--f-titulo);font-size:2.2rem;letter-spacing:.05em;text-transform:uppercase;line-height:1}
+.section-head h2 span{color:var(--naranja)}
+.section-head p{color:var(--suave);font-size:.85rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- Tabla ---------- */
+.table-wrap{background:var(--panel);border:1px solid var(--linea);border-radius:var(--r);overflow-x:auto}
+table.tbl{width:100%;border-collapse:collapse;font-size:.88rem}
+.tbl thead th{background:#0f1113;color:var(--suave);font-family:var(--f-titulo);font-weight:400;font-size:1rem;letter-spacing:.1em;text-align:left;padding:13px 14px;white-space:nowrap;border-bottom:2px solid var(--naranja)}
+.tbl td{padding:11px 14px;border-bottom:1px solid var(--linea);vertical-align:middle}
+.tbl tbody tr:hover{background:rgba(255,255,255,.03)}
+.tbl .r{text-align:right} .tbl .c{text-align:center;white-space:nowrap}
+.tbl .nm{font-weight:700} .tbl .sub{font-size:.7rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.06em}
+.tbl .fit{font-size:.78rem;color:var(--suave);max-width:15rem}
+.tbl .mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;color:var(--amarillo)}
+.tbl .stockcell{display:flex;flex-direction:column;gap:5px;min-width:96px}
+.empty{background:var(--panel);border:1px dashed var(--linea);border-radius:var(--r);padding:50px 20px;text-align:center;max-width:460px;margin:30px auto}
+.empty .ico{font-size:3.4rem;color:var(--tenue);margin-bottom:10px}
+.empty h3{font-family:var(--f-titulo);font-size:1.8rem;letter-spacing:.05em}
+.empty p{color:var(--suave);font-size:.9rem;margin:4px 0 16px}
+
+/* ---------- Login ---------- */
+.auth{max-width:400px;margin:20px auto;background:var(--panel);border:1px solid var(--linea);border-radius:16px;padding:30px;border-top:4px solid var(--naranja);box-shadow:var(--sombra)}
+.auth__head{text-align:center;margin-bottom:20px}
+.auth__head .ico{font-size:3rem;color:var(--naranja)}
+.auth__head h1{font-family:var(--f-titulo);font-size:2.2rem;letter-spacing:.06em;text-transform:uppercase}
+.auth form{display:grid;gap:14px}
+.linkbtn{display:block;margin:14px auto 0;color:var(--suave);font-size:.82rem}
+.linkbtn:hover{color:var(--naranja-2)}
+
+/* ---------- Formularios ---------- */
+.field label{display:block;font-size:.7rem;font-weight:800;color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.field input,.field select{width:100%;background:var(--carbon);border:1px solid var(--linea);border-radius:9px;padding:10px 12px;outline:0;font-size:.92rem;color:var(--texto)}
+.field input:focus,.field select:focus{border-color:var(--naranja);box-shadow:0 0 0 3px rgba(255,90,31,.2)}
+.field input:disabled,.field input[readonly]{background:#101214;color:var(--tenue)}
+.field .with-btn{display:flex;gap:8px}
+.field .with-btn button{border:1px solid var(--linea);border-radius:9px;padding:0 12px;color:var(--suave)}
+.field .with-btn button:hover{color:var(--naranja);border-color:var(--naranja)}
+.field select option{background:var(--carbon)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:22px}
+.form-grid .full{grid-column:1/-1}
+.form-actions{display:flex;justify-content:flex-end;gap:10px;padding-top:6px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg label{cursor:pointer;margin:0}
+.seg div{text-align:center;padding:10px 4px;border:1px solid var(--linea);border-radius:9px;font-weight:800;font-size:.78rem;letter-spacing:.04em;color:var(--suave)}
+.seg input:checked+div{background:var(--naranja);border-color:var(--naranja);color:#fff}
+
+/* ---------- Modal ---------- */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.7);backdrop-filter:blur(3px);overflow-y:auto;padding:24px 14px}
+.modal{max-width:640px;margin:0 auto;background:var(--panel);border:1px solid var(--linea);border-radius:16px;overflow:hidden;box-shadow:var(--sombra);animation:up .18s ease-out}
+.modal.sm{max-width:440px} .modal.md{max-width:520px}
+@keyframes up{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.modal__head{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;background:#0f1113;border-bottom:2px solid var(--naranja)}
+.modal__head h3{font-family:var(--f-titulo);font-size:1.6rem;letter-spacing:.06em;font-weight:400;text-transform:uppercase}
+.modal__x{font-size:1.6rem;line-height:1;color:var(--suave)} .modal__x:hover{color:var(--naranja)}
+.modal__body{padding:20px 22px;display:grid;gap:14px}
+.modal .card__media{height:200px}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dl dt{font-size:.66rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.dl dd{font-weight:700}
+.dl .full{grid-column:1/-1}
+
+/* ---------- Toast ---------- */
+#toast{position:fixed;bottom:18px;right:18px;z-index:60;display:flex;flex-direction:column;gap:8px}
+.toast{padding:12px 16px;border-radius:10px;font-weight:700;font-size:.88rem;box-shadow:var(--sombra);background:var(--ok);color:#052e16;animation:up .2s}
+.toast.error{background:var(--peligro);color:#fff}
+
+/* ---------- Footer ---------- */
+footer{background:#08090a;color:var(--tenue);font-size:.78rem;text-align:center;padding:16px}
+.alert-box{background:rgba(255,77,79,.1);border:1px solid var(--peligro);color:#ffb3b4;border-radius:var(--r);padding:20px;max-width:640px;margin:20px auto;font-size:.9rem}
+.alert-box code{color:var(--amarillo)}
+
+@media(max-width:640px){
+  .form-grid{grid-template-columns:1fr}
+  .hero{padding:24px 18px}
+  .account{width:100%;justify-content:space-between;margin-left:0}
+  .brand{font-size:1.6rem}
+}
