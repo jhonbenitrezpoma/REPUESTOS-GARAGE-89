@@ -9,7 +9,7 @@ window.CONFIG = {
   SUPABASE_URL: '',
   SUPABASE_ANON_KEY: '',
 
-  NEGOCIO: 'MotoRepuestos',
+  NEGOCIO: 'REPUESTOS GARAGE 89',
   MONEDA: 'COP',          // código ISO: COP, PEN, USD, MXN...
   LOCALE: 'es-CO',        // formato de números: es-CO, es-PE, es-MX...
   WHATSAPP: ''            // opcional: 573001234567 (con código de país, sin +)
