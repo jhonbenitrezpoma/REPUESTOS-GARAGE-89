@@ -6,8 +6,8 @@
 //    políticas RLS de supabase/schema.sql. NUNCA pongas la service_role.
 // =====================================================================
 window.CONFIG = {
-  SUPABASE_URL: '',
-  SUPABASE_ANON_KEY: '',
+  SUPABASE_URL: 'https://vjqwfzjhptwzzszfnrqy.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_fbbjLRI8hF0ritbLsaWZyw_8zfnv6ZX',
 
   NEGOCIO: 'REPUESTOS GARAGE 89',
   MONEDA: 'COP',          // código ISO: COP, PEN, USD, MXN...
